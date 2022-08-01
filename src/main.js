@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
-import index from "./styles/index.css";
-Vue.use(index)
+// import "./styles/index.css";
+import ZyUi from "./components"
+import Zyprogress from "./components"
+Vue.use(ZyUi)
+Vue.use(Zyprogress)
 Vue.config.productionTip = false
 
 new Vue({

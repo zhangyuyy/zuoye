@@ -33,8 +33,9 @@ export default {
 
         // 删除
         deleteList(state, payload) {
-            let index = state.list.findIndex((obj) => obj.id == payload)
-            state.list.splice(index, 1)
+            // let index = state.list.findIndex((obj) => obj.id == payload)
+            // state.list.splice(index, 1)
+            state.list = state.list.filter(obj => obj.id !== payload)
         }
 
     },

@@ -1,38 +1,44 @@
 <template>
-  <div>
-    <button @click="onColor">换肤</button>
-    <div class="todoapp">
-      <todo-header></todo-header> <todo-main></todo-main>
-      <todo-footer></todo-footer>
-    </div>
-  </div>
+	<div>
+		<zy-progress status="exception" :percentage="40" :minheight="25"
+			>40%</zy-progress
+		>
+		<zy-progress status="warning" :percentage="80" :minheight="30"
+			>80%</zy-progress
+		>
+		<zy-progress
+			status="success"
+			:percentage="100"
+			@click="fnclick"
+			:minheight="20"
+			>100%</zy-progress
+		>
+		<zy-progress>0%</zy-progress>
+	</div>
 </template>
-
 <script>
-import TodoFooter from "./components/TodoFooter.vue"; // shift + alt + 下
-import TodoHeader from "./components/TodoHeader.vue"; // shift + alt + 下
-import TodoMain from "./components/TodoMain.vue"; // shift + alt + 下
 export default {
-  data() {
-    return {};
-  },
-
-  components: {
-    TodoFooter,
-    TodoHeader,
-    TodoMain,
-  },
-
-  created() {},
-
-  methods: {
-    onColor() { 
-      
-      this.$store.dispatch('TodoHeader/ChangeColor');
-      // this.$store.commit("addTitle", "pink");
-    },
-  },
+	data() {
+		return {};
+	},
+	props: {
+		obj: {
+			type: Object,
+			default: () => {},
+		},
+	},
+	components: {},
+	methods: {
+		fnclick() {
+			alert('进度已完成');
+		},
+	},
+	created() {},
+	updated() {},
+	mounted() {},
+	filters: {},
+	computed: {},
+	watch: {},
 };
 </script>
-
-<style scoped></style>
+<style lang="less" scoped></style>
